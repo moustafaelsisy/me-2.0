@@ -1381,6 +1381,15 @@ body.touch .poptrox-popup .nav-next {
   margin-bottom: 2rem;
 }
 
+.resume-button {
+  display: block;
+  width: 10rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  text-decoration: none;
+  border-bottom: 0;
+}
+
 /* BG */
 #bg {
   -moz-transform: scale(1.0);
