@@ -1,0 +1,16 @@
+<article id="photography">
+    <h1 class="">Photography</h1>
+    {{#each photography.galleries }}
+        <h2 class="major">{{this.name}}</h2>
+        <div class="gallery">
+            {{#each this.entries}}
+                <div class="thumb">
+                    <a href="images/fulls/photography/{{this}}" class="image">
+                        <img src="images/fulls/photography/{{this}}" alt="" />
+                    </a>
+                    <h2></h2>
+                </div>
+            {{/each}}
+        </div>
+    {{/each}}
+</article>
