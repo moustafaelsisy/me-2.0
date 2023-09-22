@@ -629,20 +629,6 @@ input[type=radio] + label:before {
   display: inline-block;
   position: relative;
 }
-.image:before {
-  pointer-events: none;
-  background-image: url("../../images/overlay.png");
-  background-color: rgba(0, 0, 0, 0.9);
-  border-radius: 4px;
-  content: "";
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
 .image img {
   border-radius: 4px;
   display: block;
@@ -1030,7 +1016,7 @@ button {
   box-shadow: 0 1em 3em 0.5em rgba(0, 0, 0, 0.25);
   cursor: default;
 }
-.poptrox-popup:before {
+.poptrox-popup.captioned .poptrox-popup:before {
   -moz-transition: opacity 0.2s ease-in-out;
   -webkit-transition: opacity 0.2s ease-in-out;
   -ms-transition: opacity 0.2s ease-in-out;
@@ -1049,7 +1035,7 @@ button {
   z-index: 1;
   opacity: 1;
 }
-.poptrox-popup .pic {
+.poptrox-popup.captioned .pic {
   filter: brightness(0.7);
 }
 .poptrox-popup .closer {
@@ -1390,6 +1376,10 @@ body.touch .poptrox-popup .nav-next {
   border-bottom: 0;
 }
 
+#photography .gallery .thumb {
+  transform: scale(0.95);
+}
+
 /* BG */
 #bg {
   -moz-transform: scale(1.0);
@@ -1717,7 +1707,7 @@ body.is-preload #header .content .inner {
   position: relative;
   width: 40rem;
   max-width: 100%;
-  width: 100%;
+  width: 100vw;
   background-color: rgba(27, 31, 34, 0.85);
   border-radius: 4px;
   opacity: 0;
@@ -1812,18 +1802,21 @@ body.is-preload #header .content .inner {
   flex-wrap: wrap;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-.gallery .thumb {
-  -moz-transition: opacity 1.25s ease-in-out, -moz-filter 0.5s ease, -moz-transform 0.5s ease;
-  -webkit-transition: opacity 1.25s ease-in-out, -webkit-filter 0.5s ease, -webkit-transform 0.5s ease;
-  -ms-transition: opacity 1.25s ease-in-out, -ms-filter 0.5s ease, -ms-transform 0.5s ease;
-  transition: opacity 1.25s ease-in-out, filter 0.5s ease, transform 0.5s ease;
+.gallery.captioned .image:before {
   pointer-events: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  opacity: 0;
-  overflow: hidden;
-  position: relative;
+  background-image: url("../../images/overlay.png");
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
-.gallery .thumb:after {
+.gallery.captioned .thumb:after {
   background-image: -moz-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
   background-image: -webkit-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
   background-image: -ms-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
@@ -1837,6 +1830,17 @@ body.is-preload #header .content .inner {
   position: absolute;
   top: 0;
   width: 100%;
+}
+.gallery .thumb {
+  -moz-transition: opacity 1.25s ease-in-out, -moz-filter 0.5s ease, -moz-transform 0.5s ease;
+  -webkit-transition: opacity 1.25s ease-in-out, -webkit-filter 0.5s ease, -webkit-transform 0.5s ease;
+  -ms-transition: opacity 1.25s ease-in-out, -ms-filter 0.5s ease, -ms-transform 0.5s ease;
+  transition: opacity 1.25s ease-in-out, filter 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
 }
 .gallery .thumb:hover {
   filter: brightness(0.8);

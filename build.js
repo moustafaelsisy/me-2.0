@@ -7,6 +7,7 @@ const template = fs.readFileSync('index.handlebars', 'utf8');
 
 // Register Partials
 hb.registerPartial('tech', fs.readFileSync('./assets/html/tech.handlebars', 'utf8'));
+hb.registerPartial('photography', fs.readFileSync('./assets/html/photography.handlebars', 'utf8'));
 
 // Compile said template
 var compiled = hb.compile(template);
@@ -113,9 +114,49 @@ var html = compiled({
                 "Rebuilt and enhanced the frontend using ReactJS, along with Web Sockets and REST APIs, in order to create a more performant and resilient SPA",
                 "Reduced the SPA’s bundle size by ~40%, through proper management of dependencies and Webpack builds for all frontend micro-services"
             ]
-        }]
+            }]
+        },
+    },
+    photography: {
+        galleries: [
+            {
+                name: "New York City",
+                entries: [
+                    "P3010006.jpg",
+                    "P3010064.jpg",
+                    "P3020137.jpg",
+                    "P3020297.jpg",
+                    "P3020281.jpg",
+                    "P3030398.jpg",
+                    "P3030359.jpg",
+                    "P3030397.jpg",
+                    "P3020176.jpg"
+                ]
+            },
+            {
+                name: "Quebéc City",
+                entries: [
+                    "P5200752.jpg",
+                    "P5200736.jpg",
+                    "IMG_2444.jpg",
+                    "P5200799.jpg",
+                    "P5200776_Original.jpg",
+                    "P5200792_Original.jpg"
+                ]
+            },
+            {
+                name: "Formula 1®",
+                entries: [
+                    "P6160815_01.jpg",
+                    "P6160821.jpg",
+                    "P6160920.jpg",
+                    "P6160929_01.jpg",
+                    "P6161016.jpg",
+                    "P6161022.jpg"
+                ]
+            }
+        ]
     }
-}
 });
 
 // Write HTML file
